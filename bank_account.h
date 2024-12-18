@@ -6,6 +6,7 @@
 #define BANK_ACCOUNT_H
 #include <string>
 
+
 class account_detail {
 
 public:
@@ -15,20 +16,23 @@ public:
     std::string get_pin();
 private:
 
-    std::string account_number = "1234";
-    std::string pin = "1234";
+    std::string account_number = "123";
+    std::string pin = "123";
 
 };
 class bank_account {
 public:
-    void deposit(int, double*);
-    void draw(int,double*);
-    double print_total(double*);
-    void display_details(double*, std::string*);
-    bool check_pin(std::string,std::string);
-    bool check_account_number(std::string,std::string);
-    void time_limit();
-    void receipt(double* , std::string*);
+    static void deposit(int, double*);
+
+    static void draw(int,double*);
+    static double print_total(const double*);
+    static void display_details(const double*, const std::string*);
+    static bool check_pin(const std::string&,const std::string&);
+    static bool check_account_number(const std::string&,const std::string&);
+
+    static void time_limit();
+
+    static void receipt(const double* , const std::string*, const std::string&);
 };
 
 
